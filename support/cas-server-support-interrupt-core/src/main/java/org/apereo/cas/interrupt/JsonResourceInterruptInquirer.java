@@ -56,14 +56,12 @@ public class JsonResourceInterruptInquirer extends BaseInterruptInquirer impleme
         final RequestContext requestContext) {
         readResourceForInterrupts();
         val user = authentication.getPrincipal().getId();
-        
+
         InterruptResponse inquired_response = interrupts.get(user);
         if (inquired_response) {
             return inquired_response;
         }
-        // if (interrupts.containsKey(user)) {
-        //     return interrupts.get(user);
-        // }
+
 
         return InterruptResponse.none();
     }
